@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  --Soft-violet: hsl(273, 75%, 66%);
+  --Soft-blue: hsl(240, 73%, 65%);
+  --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --Soft-red: hsl(14, 88%, 65%);
+  --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+* {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(to bottom, var(--Soft-violet), var(--Soft-blue));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  background: var(--Light-grayish-blue);
+  border-radius: 1rem;
+  width: 1000px;
+}
+.card-container {
+  background-image: url("./images/bg-pattern-desktop.svg");
+  background-position: top left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 1.5rem;
+}
+.bg-patter {
+  position: absolute;
+}
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+.questions {
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.questions-title {
+  color: var(--Very-dark-desaturated-blue);
+}
+.question-box > h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: hsl(238, 29%, 50%);
+}
+.question-box > h4::after {
+  content: url("./images/icon-arrow-down.svg");
+}
+.question-box {
+  max-height: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 1rem 0;
+  border-bottom: 1px solid gray;
+}
+.question-box > p {
+  color: gray;
+}
+.question-box.active {
+  overflow: auto;
+  max-height: 100%;
+}
+.question-box:hover > h4 {
+  color: var(--Soft-red);
+}
+.question-box.active > h4 {
+  color: var(--Very-dark-desaturated-blue);
+}
+.question-box.active > h4::after {
+  transform: rotate(180deg);
+}
+@media screen and (max-width: 870px) {
+  .card {
+    background: var(--Light-grayish-blue);
+    border-radius: 1rem;
+    width: 375px;
+  }
+  .card-container {
+    background-image: url("./images/bg-pattern-mobile.svg");
+    background-position: top top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem;
+  }
+  .questions {
+    margin-top: 2rem;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
